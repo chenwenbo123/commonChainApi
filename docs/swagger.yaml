@@ -1,0 +1,580 @@
+definitions:
+  router.Response:
+    properties:
+      data: {}
+      msg:
+        type: string
+      status:
+        type: integer
+    type: object
+info:
+  contact:
+    email: ChainBaby
+    name: ChainBaby
+  description: ChainBaby
+  termsOfService: http://swagger.io/terms/
+  title: ChainBaby
+  version: "1.0"
+paths:
+  /api/approveCoin:
+    get:
+      description: 代币授权
+      parameters:
+      - description: 公链的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 代币地址
+        in: query
+        name: token_address
+        required: true
+        type: string
+      - description: 私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      - description: 消费者地址
+        in: query
+        name: spender_address
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 代币授权
+  /api/burn:
+    post:
+      description: 销毁
+      operationId: "10"
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 合约地址
+        in: query
+        name: token_address
+        required: true
+        type: string
+      - description: 钱包私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      - description: 销毁数量
+        in: query
+        name: amount
+        required: true
+        type: number
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 销毁
+  /api/burnNft:
+    post:
+      description: 销毁Nft
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: nft地址
+        in: query
+        name: nft_address
+        required: true
+        type: string
+      - description: 签名私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      - description: nft id
+        in: query
+        name: token_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 销毁Nft
+  /api/checkAllowance:
+    get:
+      description: 查询检查授权
+      parameters:
+      - description: 公链的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 代币地址
+        in: query
+        name: token_address
+        required: true
+        type: string
+      - description: 来源地址
+        in: query
+        name: owner_address
+        required: true
+        type: string
+      - description: 消费者地址
+        in: query
+        name: spender_address
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 查询Token 检查授权
+  /api/createWallet:
+    get:
+      consumes:
+      - multipart/form-data
+      description: 创建钱包
+      operationId: "1"
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 创建钱包
+  /api/getBaseAddress:
+    get:
+      description: 私钥转地址
+      parameters:
+      - description: 公链的ID 0代表以太 1代表币安
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 私钥转地址
+  /api/getOa:
+    get:
+      description: 获取权限所属
+      parameters:
+      - description: 来源地址
+        in: query
+        name: from_address
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 波场获取账户权限Owner和Active
+  /api/informReceive:
+    post:
+      description: 接收充值提现通知
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安
+        in: query
+        name: chain
+        required: true
+        type: integer
+      - description: 区块号
+        in: query
+        name: block_num
+        required: true
+        type: integer
+      - description: 币名
+        in: query
+        name: coin_name
+        required: true
+        type: string
+      - description: 合约地址
+        in: query
+        name: contract_address
+        required: true
+        type: string
+      - description: 类型
+        in: query
+        name: type
+        required: true
+        type: string
+      - description: 发起地址
+        in: query
+        name: from_address
+        required: true
+        type: string
+      - description: 接收地址
+        in: query
+        name: to_address
+        required: true
+        type: string
+      - description: 数量
+        in: query
+        name: num
+        required: true
+        type: number
+      - description: txid
+        in: query
+        name: txid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 接收充值提现通知
+  /api/issueSimpleCoin:
+    get:
+      description: 发布普通代币
+      parameters:
+      - description: 公链的ID 0代表以太 1代表币安
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 代币名称
+        in: query
+        name: name
+        required: true
+        type: string
+      - description: 代币精度
+        in: query
+        name: decimal
+        required: true
+        type: integer
+      - description: 代币符号
+        in: query
+        name: symbol
+        required: true
+        type: string
+      - description: 总供应量
+        in: query
+        name: total_supply
+        required: true
+        type: integer
+      - description: 私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 发布普通代币
+  /api/mintNft:
+    post:
+      description: 铸造Nft
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: nft地址
+        in: query
+        name: nft_address
+        required: true
+        type: string
+      - description: 签名私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      - description: 数量
+        in: query
+        name: num
+        required: true
+        type: integer
+      - description: 价格
+        in: query
+        name: price
+        required: true
+        type: number
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 铸造Nft
+  /api/multiSign:
+    get:
+      description: 多签
+      parameters:
+      - description: 操作地址
+        in: query
+        name: current_address
+        required: true
+        type: string
+      - description: 签名私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      - description: 新权限拥有者
+        in: query
+        name: new_owner
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 多签
+  /api/queryFeeBalance:
+    get:
+      description: 查询手续费币余额
+      operationId: "0"
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 用户地址
+        in: query
+        name: user_address
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 查询手续费币余额
+  /api/queryTokenBalance:
+    get:
+      description: 查询合约余额
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 合约地址
+        in: query
+        name: token_address
+        required: true
+        type: string
+      - description: 用户地址
+        in: query
+        name: user_address
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 查询合约余额
+  /api/queryTotalsupply:
+    get:
+      description: 查询Token总发行量
+      parameters:
+      - description: 公链的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 智能合约地址
+        in: query
+        name: token_address
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 查询Token总发行量
+  /api/tranferCoin:
+    get:
+      description: 转账代币
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 合约地址
+        in: query
+        name: token_address
+        required: true
+        type: string
+      - description: 签名私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      - description: 转出地址
+        in: query
+        name: from_address
+        required: true
+        type: string
+      - description: 目标地址
+        in: query
+        name: to_address
+        required: true
+        type: string
+      - description: 提币数量
+        in: query
+        name: amount
+        required: true
+        type: number
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 转账代币
+  /api/transferFeeCoin:
+    get:
+      description: 转账手续费币
+      parameters:
+      - description: 钱包的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      - description: 转出地址
+        in: query
+        name: from_address
+        required: true
+        type: string
+      - description: 转入地址
+        in: query
+        name: to_address
+        required: true
+        type: string
+      - description: 数量
+        in: query
+        name: amount
+        required: true
+        type: number
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 转账手续费币
+  /api/transferFromCoin:
+    get:
+      description: 授权转账代币
+      parameters:
+      - description: 公链的ID 0代表以太 1代表币安 2代表波场
+        in: query
+        name: chain_id
+        required: true
+        type: integer
+      - description: 代币地址
+        in: query
+        name: token_address
+        required: true
+        type: string
+      - description: 代币数量
+        in: query
+        name: amount
+        required: true
+        type: number
+      - description: 来源地址
+        in: query
+        name: from_address
+        required: true
+        type: string
+      - description: 目标地址
+        in: query
+        name: to_address
+        required: true
+        type: string
+      - description: 消费地址私钥
+        in: query
+        name: private_key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            $ref: '#/definitions/router.Response'
+      tags:
+      - 授权转账代币
+swagger: "2.0"
