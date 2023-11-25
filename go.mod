@@ -1,4 +1,4 @@
-module commonTools
+module github.com/Francisundermoon/commonTools
 
 go 1.20
 
