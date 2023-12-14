@@ -14,27 +14,11 @@ type Conf struct {
 		ApiKey string `yaml:"apiKey"`
 	} `yaml:"Tron"`
 
-	Db struct {
-		Host     string `yaml:"host"`
-		DbName   string `yaml:"dbName"`
-		UserName string `yaml:"userName"`
-		Password string `yaml:"password"`
-	} `yaml:"Db"`
-
 	Node struct {
 		Ethereum string `yaml:"ethereum"`
 		Bsc      string `yaml:"bsc"`
 		Tron     string `yaml:"tron"`
 	} `yaml:"Node"`
-
-	Inform struct {
-		Url string `yaml:"url"`
-	} `yaml:"Inform"`
-
-	System struct {
-		Port   string `yaml:"port"`
-		Router string `yaml:"router"`
-	} `yaml:"System"`
 }
 
 func LoadConfig() *Conf {

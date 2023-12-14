@@ -1,22 +1,8 @@
 Tron:
   apiKey: c50f3587-fe98-41a0-9f48-3a357bad27a8
 
-Db:
-  host: 127.0.0.1
-  dbName: yj
-  userName: root
-  password: root
-
 Node:
   ethereum: https://eth.llamarpc.com
   bsc: https://bsc-dataseed1.ninicoin.io
   tron: grpc.trongrid.io:50051
 
-
-Inform:
-  url: http://127.0.0.1:2025/api/informReceive
-
-
-System:
-  port: 2025
-  router: http://127.0.0.1
