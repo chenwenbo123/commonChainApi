@@ -1,9 +1,9 @@
 package router
 
 import (
-	_ "chargeWithdraw/docs"
-	"chargeWithdraw/middleware"
-	Config "chargeWithdraw/yaml"
+	_ "github.com/Francisundermoon/commonChainApi/docs"
+	"github.com/Francisundermoon/commonChainApi/middleware"
+	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"

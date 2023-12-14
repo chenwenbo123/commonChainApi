@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"chargeWithdraw/db"
-	"chargeWithdraw/model"
+	"github.com/Francisundermoon/commonChainApi/db"
+	"github.com/Francisundermoon/commonChainApi/model"
 )
 
 type MultiRecord struct {

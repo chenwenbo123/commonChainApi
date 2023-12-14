@@ -1,7 +1,7 @@
 package generate
 
 import (
-	"chargeWithdraw/utils/tron"
+	"github.com/Francisundermoon/commonChainApi/utils/tron"
 )
 
 func ProduceTron() *SingleData {

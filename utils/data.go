@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"chargeWithdraw/model"
+	"github.com/Francisundermoon/commonChainApi/model"
 	"strconv"
 )
 

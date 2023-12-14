@@ -1,8 +1,8 @@
 package db
 
 import (
-	Config "chargeWithdraw/yaml"
 	"fmt"
+	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

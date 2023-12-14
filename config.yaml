@@ -1,5 +1,5 @@
 Tron:
-  apiKey: 
+  apiKey: c50f3587-fe98-41a0-9f48-3a357bad27a8
 
 Db:
   host: 127.0.0.1
@@ -8,14 +8,9 @@ Db:
   password: root
 
 Node:
-  ethereum: https://sepolia.infura.io/v3/
-  bsc: https://data-seed-prebsc-1-s1.binance.org:8545/
-  tron: grpc.nile.trongrid.io:50051
-
-#Node:
-#  ethereum: https://eth.llamarpc.com
-#  bsc: https://bsc-dataseed1.defibit.io
-#  tron: grpc.trongrid.io:50051
+  ethereum: https://eth.llamarpc.com
+  bsc: https://bsc-dataseed1.ninicoin.io
+  tron: grpc.trongrid.io:50051
 
 
 Inform:

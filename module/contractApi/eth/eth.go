@@ -1,14 +1,14 @@
 package eth
 
 import (
-	"chargeWithdraw/contract"
-	"chargeWithdraw/contract/nft"
-	"chargeWithdraw/model"
-	"chargeWithdraw/utils"
-	"chargeWithdraw/utils/eth"
-	Config "chargeWithdraw/yaml"
 	"context"
 	"fmt"
+	"github.com/Francisundermoon/commonChainApi/contract"
+	"github.com/Francisundermoon/commonChainApi/contract/nft"
+	"github.com/Francisundermoon/commonChainApi/model"
+	"github.com/Francisundermoon/commonChainApi/utils"
+	"github.com/Francisundermoon/commonChainApi/utils/eth"
+	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"

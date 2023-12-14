@@ -1,12 +1,12 @@
 package etherScan
 
 import (
-	"chargeWithdraw/db"
-	"chargeWithdraw/model"
-	"chargeWithdraw/utils"
-	Config "chargeWithdraw/yaml"
 	"context"
 	"fmt"
+	"github.com/Francisundermoon/commonChainApi/db"
+	"github.com/Francisundermoon/commonChainApi/model"
+	"github.com/Francisundermoon/commonChainApi/utils"
+	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/robfig/cron"

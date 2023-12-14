@@ -1,14 +1,14 @@
 package tronScan
 
 import (
-	"chargeWithdraw/db"
-	errorModel "chargeWithdraw/error"
-	"chargeWithdraw/model"
-	"chargeWithdraw/utils"
-	"chargeWithdraw/utils/tron"
-	Config "chargeWithdraw/yaml"
 	"encoding/json"
 	"fmt"
+	"github.com/Francisundermoon/commonChainApi/db"
+	errorModel "github.com/Francisundermoon/commonChainApi/error"
+	"github.com/Francisundermoon/commonChainApi/model"
+	"github.com/Francisundermoon/commonChainApi/utils"
+	"github.com/Francisundermoon/commonChainApi/utils/tron"
+	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/robfig/cron"
 	"gorm.io/gorm"
 	"log"

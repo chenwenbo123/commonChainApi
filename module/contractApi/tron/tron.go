@@ -1,13 +1,13 @@
 package tron
 
 import (
-	"chargeWithdraw/model"
-	"chargeWithdraw/utils"
-	"chargeWithdraw/utils/eth"
-	"chargeWithdraw/utils/tron"
-	Config "chargeWithdraw/yaml"
 	"encoding/json"
 	"fmt"
+	"github.com/Francisundermoon/commonChainApi/model"
+	"github.com/Francisundermoon/commonChainApi/utils"
+	"github.com/Francisundermoon/commonChainApi/utils/eth"
+	"github.com/Francisundermoon/commonChainApi/utils/tron"
+	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/JFJun/trx-sign-go/grpcs"
 	"github.com/JFJun/trx-sign-go/sign"
 	"github.com/fbsobreira/gotron-sdk/pkg/abi"

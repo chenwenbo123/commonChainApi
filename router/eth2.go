@@ -1,11 +1,11 @@
 package router
 
 import (
-	eth2 "chargeWithdraw/module/contractApi/eth"
-	tron2 "chargeWithdraw/module/contractApi/tron"
-	"chargeWithdraw/utils"
-	"chargeWithdraw/utils/eth"
-	tron3 "chargeWithdraw/utils/tron"
+	eth2 "github.com/Francisundermoon/commonChainApi/module/contractApi/eth"
+	tron2 "github.com/Francisundermoon/commonChainApi/module/contractApi/tron"
+	"github.com/Francisundermoon/commonChainApi/utils"
+	"github.com/Francisundermoon/commonChainApi/utils/eth"
+	tron3 "github.com/Francisundermoon/commonChainApi/utils/tron"
 	"github.com/gin-gonic/gin"
 )
 

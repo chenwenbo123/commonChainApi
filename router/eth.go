@@ -1,15 +1,15 @@
 package router
 
 import (
-	"chargeWithdraw/db"
-	"chargeWithdraw/model"
-	eth2 "chargeWithdraw/module/contractApi/eth"
-	tron2 "chargeWithdraw/module/contractApi/tron"
-	generate "chargeWithdraw/module/generateAddress"
-	"chargeWithdraw/utils"
-	"chargeWithdraw/utils/tron"
-	Config "chargeWithdraw/yaml"
 	"fmt"
+	"github.com/Francisundermoon/commonChainApi/db"
+	"github.com/Francisundermoon/commonChainApi/model"
+	eth2 "github.com/Francisundermoon/commonChainApi/module/contractApi/eth"
+	tron2 "github.com/Francisundermoon/commonChainApi/module/contractApi/tron"
+	generate "github.com/Francisundermoon/commonChainApi/module/generateAddress"
+	"github.com/Francisundermoon/commonChainApi/utils"
+	"github.com/Francisundermoon/commonChainApi/utils/tron"
+	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/gin-gonic/gin"
 )
