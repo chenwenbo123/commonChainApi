@@ -5,8 +5,6 @@ import (
 	"github.com/Francisundermoon/commonChainApi/middleware"
 	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/gin-gonic/gin"
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func Init(g *gin.Engine, c *Config.Conf) {
@@ -33,8 +31,4 @@ func Init(g *gin.Engine, c *Config.Conf) {
 		r.GET("/issueSimpleCoin", IssueSimpleCoin)
 		r.GET("/getBaseAddress", GetBaseAddress)
 	}
-	//加载接口文档
-	url := ginSwagger.URL(c.System.Router + ":" + c.System.Port + "/api/docs/doc.json") // The url pointing to API definition
-	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
-
 }

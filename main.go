@@ -23,7 +23,6 @@ func main() {
 	//init the log file
 	logs.InitLog()
 
-	//加载数据
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 	router.Init(r, config)
