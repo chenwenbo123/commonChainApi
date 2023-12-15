@@ -6,7 +6,6 @@ import (
 	"github.com/Francisundermoon/commonChainApi/utils"
 	"github.com/Francisundermoon/commonChainApi/utils/eth"
 	"github.com/Francisundermoon/commonChainApi/utils/tron"
-	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/JFJun/trx-sign-go/grpcs"
 	"github.com/JFJun/trx-sign-go/sign"
 	"github.com/fbsobreira/gotron-sdk/pkg/abi"
@@ -18,9 +17,15 @@ import (
 	"strings"
 )
 
+//var (
+//	Node   = Config.LoadConfig().Node.Tron
+//	ApiKey = Config.LoadConfig().Tron.ApiKey
+//	Usdt   = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
+//)
+
 var (
-	Node   = Config.LoadConfig().Node.Tron
-	ApiKey = Config.LoadConfig().Tron.ApiKey
+	Node   = "grpc.trongrid.io:50051"
+	ApiKey = "c50f3587-fe98-41a0-9f48-3a357bad27a8"
 	Usdt   = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
 )
 

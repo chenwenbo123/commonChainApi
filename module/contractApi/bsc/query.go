@@ -10,9 +10,15 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 )
 
+// var (
+//
+//	Node = Config.LoadConfig().Node.Bsc
+//	Usdt = "0x55d398326f99059fF775485246999027B3197955"
+//
+// )
 var (
 	Node = Config.LoadConfig().Node.Bsc
-	Usdt = "0x55d398326f99059fF775485246999027B3197955"
+	Usdt = "https://bsc-dataseed1.ninicoin.io"
 )
 
 func GetFeeBalance(userAddress string) (float64, error) {

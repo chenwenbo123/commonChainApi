@@ -4,14 +4,19 @@ import (
 	"context"
 	"github.com/Francisundermoon/commonChainApi/contract"
 	"github.com/Francisundermoon/commonChainApi/utils"
-	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 )
 
+// var (
+//
+//	Node = Config.LoadConfig().Node.Ethereum
+//	Usdt = "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+//
+// )
 var (
-	Node = Config.LoadConfig().Node.Ethereum
+	Node = "https://eth.llamarpc.com"
 	Usdt = "0xdAC17F958D2ee523a2206206994597C13D831ec7"
 )
 
