@@ -4,7 +4,6 @@ import (
 	"context"
 	"github.com/Francisundermoon/commonChainApi/contract"
 	"github.com/Francisundermoon/commonChainApi/utils"
-	Config "github.com/Francisundermoon/commonChainApi/yaml"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
@@ -17,8 +16,8 @@ import (
 //
 // )
 var (
-	Node = Config.LoadConfig().Node.Bsc
-	Usdt = "https://bsc-dataseed1.ninicoin.io"
+	Node = "https://bsc-dataseed1.ninicoin.io"
+	Usdt = "0x55d398326f99059fF775485246999027B3197955"
 )
 
 func GetFeeBalance(userAddress string) (float64, error) {
