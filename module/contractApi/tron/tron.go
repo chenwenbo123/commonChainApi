@@ -2,6 +2,7 @@ package tron
 
 import (
 	"fmt"
+	"math/rand"
 
 	"github.com/Francisundermoon/commonChainApi/utils"
 	"github.com/Francisundermoon/commonChainApi/utils/eth"
@@ -25,7 +26,7 @@ import (
 
 var (
 	Node   = "grpc.trongrid.io:50051"
-	ApiKey = "c50f3587-fe98-41a0-9f48-3a357bad27a8"
+	ApiKey = []string{"c50f3587-fe98-41a0-9f48-3a357bad27a8", "38798fc5-3401-4eb2-9499-90755fc08e2d", "c5cac2f8-04d4-434c-821d-b0dc89165690"}
 	Usdt   = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
 )
 
@@ -33,7 +34,7 @@ func Init() (*grpcs.Client, error) {
 
 	conn, err := grpcs.NewClient(Node)
 	conn.GRPC.Start(grpc.WithInsecure())
-	conn.GRPC.SetAPIKey(ApiKey)
+	conn.GRPC.SetAPIKey(ApiKey[rand.Intn(len(ApiKey))])
 	if err != nil {
 		return nil, err
 	}
