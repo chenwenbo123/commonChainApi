@@ -128,7 +128,7 @@ func TransferFromCoin(cli *client.GrpcClient, pk, token, addrA, addrB string, am
 	req += "0000000000000000000000000000000000000000000000000000000000000000"[len(addrTwo.Hex())-2:] + addrTwo.Hex()[2:]
 	ab := common.LeftPadBytes(amount.Bytes(), 32)
 	req += common.Bytes2Hex(ab)
-	tx, err := cli.TRC20Call(PkToAddress(pk), token, req, true, 50000000)
+	tx, err := cli.TRC20Call(PkToAddress(pk), token, req, false, 50000000)
 	signTx, err := sign.SignTransaction(tx.Transaction, pk)
 	if err != nil {
 		return err, ""
